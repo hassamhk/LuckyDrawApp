@@ -1,0 +1,190 @@
+:root {
+  --uae-primary: #1662b3;
+  /* Red */
+  --uae-secondary: #1f9970;
+  /* Green */
+  --uae-accent: #0d272c;
+  /* Black */
+  --uae-base: #FFFFFF;
+  /* White */
+}
+
+@font-face {
+  font-family: 'Nunito';
+  font-weight: 200;
+  src: url('../fonts/Nunito-ExtraLight.ttf');
+}
+
+@font-face {
+  font-family: 'Nunito';
+  font-weight: 300;
+  src: url('../fonts/Nunito-Light.ttf');
+}
+
+@font-face {
+  font-family: 'Nunito';
+  font-weight: 400;
+  src: url('../fonts/Nunito-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Nunito';
+  font-weight: 500;
+  src: url('../fonts/Nunito-Medium.ttf');
+}
+
+@font-face {
+  font-family: 'Nunito';
+  font-weight: 600;
+  src: url('../fonts/Nunito-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: 'Nunito';
+  font-weight: 700;
+  src: url('../fonts/Nunito-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Nunito';
+  font-weight: 800;
+  src: url('../fonts/Nunito-ExtraBold.ttf');
+}
+
+* {
+  font-family: 'Nunito', sans-serif;
+}
+
+/* ================= UAE THEME UTILITY CLASSES ================= */
+
+/* Background Colors */
+.bg-luckydraw-primary {
+  background-color: var(--uae-primary) !important;
+}
+
+.bg-luckydraw-secondary {
+  background-color: var(--uae-secondary) !important;
+}
+
+.bg-luckydraw-accent {
+  background-color: var(--uae-accent) !important;
+}
+
+.bg-luckydraw-base {
+  background-color: var(--uae-base) !important;
+}
+
+/* Text Colors */
+.text-uae-primary {
+  color: var(--uae-primary) !important;
+}
+
+.text-uae-secondary {
+  color: var(--uae-secondary) !important;
+}
+
+.text-uae-accent {
+  color: var(--uae-accent) !important;
+}
+
+.text-uae-base {
+  color: var(--uae-base) !important;
+}
+
+/* Gradient Background */
+.bg-luckydraw-gradient {
+  background: linear-gradient(to right, var(--uae-primary), var(--uae-accent), var(--uae-secondary)) !important;
+  color: white !important;
+}
+
+/* Gradient Text */
+.text-uae-gradient {
+  background: linear-gradient(to right, var(--uae-primary), var(--uae-accent), var(--uae-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ================= ========================= ================= */
+.rounded {
+  border-radius: 5px !important;
+}
+
+main {
+  overflow: auto;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer !important;
+}
+
+th {
+  font-weight: bold;
+  color: var(--uae-secondary); /* Previously var(--uae-black) */
+}
+
+table {
+  white-space: nowrap;
+}
+
+/* ========== Toggle Switch ========== */
+.toggle {
+  display: flex;
+  user-select: none;
+}
+
+.toggle .check_input {
+  appearance: none;
+  background-color: #dfe1e4;
+  border-radius: 72px;
+  border-style: none;
+  flex-shrink: 0;
+  height: 20px;
+  width: 30px;
+  margin: 0;
+  position: relative;
+  transition: all 100ms ease-out;
+  cursor: pointer;
+}
+
+.toggle .check_input::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 14px;
+  height: 14px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: all 100ms ease-out;
+}
+
+.toggle input[type=checkbox] {
+  cursor: default;
+}
+
+.toggle .check_input:hover {
+  background-color: #c9cbcd;
+}
+
+.toggle .check_input:checked {
+  background-color: var(--uae-accent);
+}
+
+.toggle .check_input:checked::after {
+  left: 13px;
+  background-color: #fff;
+}
+
+.toggle .check_input:checked:hover {
+  background-color: var(--uae-secondary);
+}
+
+.toggle label {
+  cursor: pointer;
+}
