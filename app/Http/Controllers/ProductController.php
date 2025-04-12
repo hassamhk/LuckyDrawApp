@@ -13,6 +13,14 @@ class ProductController extends Controller
         $products = Product::latest()->get();
         return view('backend.products.products', compact('products'));
     }
+    public function toggle($id)
+    {
+        $product = Product::findOrFail($id);
+        $product->is_active = !$product->is_active;
+        $product->save();
+
+        return back()->with('success', 'Product visibility updated!');
+    }
     public function create()
     {
         return view('backend.products.add');

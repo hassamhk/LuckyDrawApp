@@ -11,6 +11,7 @@ Route::get('/', function () {
 
 Route::prefix('product')->controller(ProductController::class)->group(function () {
     Route::get('/', 'index')->name('products');
+    Route::put('/toggle/{id}', 'toggle')->name('products.toggle'); // ✅ use DELETE and pass ID
     Route::get('/create', 'create')->name('products.add');
     Route::post('/store', 'store')->name('products.store');
     Route::get('/edit/{id}', 'edit')->name('products.edit');

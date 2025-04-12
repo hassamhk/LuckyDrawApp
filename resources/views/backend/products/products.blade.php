@@ -16,7 +16,7 @@
                         <input type="text" placeholder="Search" class="max-w-[300px] w-full px-4 py-2 focus:outline-none" />
                     </div>
 
-                    <a href="{{route('products.add')}}"
+                    <a href="{{ route('products.add') }}"
                         class="flex items-center gap-2 bg-luckydraw-accent text-white px-6 py-2 rounded hover:bg-opacity-80 focus:outline-none focus:ring-2 focus:ring-luckydraw-accent active:bg-opacity-90 transition">
                         <i class="ph ph-plus"></i>
                         <span>Add Product</span>
@@ -61,6 +61,15 @@
                                             @method('DELETE')
                                             <button type="submit" class="text-red-500 hover:text-red-700 transition">
                                                 <i class="ph ph-trash text-xl"></i>
+                                            </button>
+                                        </form>
+                                        <!-- Toggle is_active -->
+                                        <form action="{{ route('products.toggle', $product->id) }}" method="POST">
+                                            @csrf
+                                            @method('PUT')
+                                            <button type="submit"
+                                                class="text-sm px-2 py-1 rounded {{ $product->is_active ? 'bg-green-500 text-white' : 'bg-gray-300 text-black' }}">
+                                                {{ $product->is_active ? 'Visible' : 'Hidden' }}
                                             </button>
                                         </form>
                                     </div>
