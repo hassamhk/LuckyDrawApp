@@ -17,8 +17,10 @@ Route::middleware('auth:sanctum')->group(function () {
 
     // Select winner manually
     Route::post('/products/{productId}/select-winner', [WinnerController::class, 'selectManualWinner']);
-    // Select winner automatically
-    Route::post('/products/{productId}/select-random-winner', [WinnerController::class, 'selectAutomaticWinner']);
+    // Select winner automatically (Random)
+    Route::post('/products/{productId}/select-random-winner', [WinnerController::class, 'selectRandomWinner']);
+    // Select winner automatically (Hash Function)
+    Route::post('/products/{productId}/select-hash-winner', [WinnerController::class, 'selectHashWinner']);
 
     // Get User Profile
     Route::get('/user/profile', [AuthController::class, 'profile']);
